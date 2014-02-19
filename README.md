@@ -33,6 +33,7 @@ You can also POST links with parameters (and also automatically setup the POST m
 
 ```javascript
 $(".rest-post").restfulizer({
+        parse: true,
         method: "POST"
 });
 ```
