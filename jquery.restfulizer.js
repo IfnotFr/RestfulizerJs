@@ -17,7 +17,7 @@
 	$.fn.extend({
 		restfulizer: function(options) {
 			var defaults = {
-				parse: true,
+				parse: false,
 				target: null,
 				method: "POST"
 			};
