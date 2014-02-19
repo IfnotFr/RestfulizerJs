@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RestfulizerJs Example</title>
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+		
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// Basic usage
+				$("a.example1").restfulizer();
+				
+				// Specified
+				$(".example2").restfulizer({
+					method: "POST"
+				});
+				
+				// Fully specified
+				$(".example3").restfulizer({
+					method: "POST",
+					target: "example.html?specified=yes"
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>RestfulizerJs Example !</h1>
+				<p class="lead">A simple jQuery plugin for changing the http method (POST/PUT/DELETE) of a simple html link or button.</p>
+				<p>Look into your http debugger for see the differents http methods (all test links are sent to this page).</p>
+			</div>
+			
+			<h3>Simple POST</h3>
+			<p>Link posting nothing to destination (use default options <code>$("a.example1").restfulizer();</code>). The http method is specified by a <code>data-method="POST"</code> into your link (you can use GET, POST, PUT, DELETE).</p>
+			<a href="example.html" class="btn btn-primary example1" data-method="POST">Simple POST</a>
+			
+			<h3>POST datas contained in the URL of the link</h3>
+			<p>Link posting datas contained in the URL to destination (use default options <code>$("a.simple").restfulizer();</code>). The datas are automatically parsed from the URL (disable this with the restfulizer option <code>parse: false</code>).</p>
+			<a href="example.html?data1=value&data2=other%20value" class="btn btn-primary example1" data-method="POST">POST URL parameters</a>
+			
+			<h3>HTTP method specified in restfulizer parameter</h3>
+			<p>All links with <code>.example2</code> will automatically post the datas to destination. See the restfulizer <code>method: "POST"</code> in the source (<code>data-method="POST"</code> link attribute is be ommited).</p>
+			<a href="example.html?httpdata=yep" class="btn btn-primary example2">A link</a> <a href="example.html?adata=yes" class="btn btn-primary example2">Other link</a>
+			
+			<h3>HTTP method and target specified in restfulizer parameter</h3>
+			<p>If you want to make a button sending post datas you can specify a target parameter. See the restfulizer <code>target: "example.html?specified=yes"</code> in the source</p>
+			<button class="btn btn-success example3">I am just a button</button>
+		</div>
+		
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="jquery.restfulizer.js"></script>
+	</body>
+</html>
