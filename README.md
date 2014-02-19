@@ -45,10 +45,3 @@ $(".rest").restfulizer({
         target: "example.html?specified=yes" // The target (usefull for making non link clickable)
 });
 ```
-
-## What it handles
-
-* jQuery `.click()` and `.bind('click')` methods
-* Hard coded `onclick` attributes
-* `href` attribute from a `a` lik
-* Submit a form from a `type="submit"` button/input
