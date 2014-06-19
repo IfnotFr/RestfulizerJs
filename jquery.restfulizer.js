@@ -34,6 +34,9 @@
 				if(typeof($(this).attr('href')) != "undefined") {
 					options.target = $(this).attr('href');
 				}
+				if(typeof($(this).attr('data-confirm')) != "undefined") {
+					options.confirm = $(this).attr('data-confirm');
+				}
 				
 				// Parse href parameters and create an input for each parameter
 				var inputs = "";
@@ -64,7 +67,10 @@
 				self.append(form)
 				.removeAttr('href')
 				.attr('style','cursor:pointer;')
-				.attr('onclick','$(this).find("form").submit();');
+				.click(function(){
+					if(!options.confirm || confirm(options.confirm))
+						$(this).find("form").submit();
+				});
 			});
 		}
 	});   
