@@ -1,7 +1,7 @@
 {
   "name": "restfulizer",
   "description": "A simple jQuery plugin for changing the http method (POST/PUT/DELETE) of a simple html link or button",
-  "main": "jquery.restfulizer.js"
+  "main": "jquery.restfulizer.js",
   "keywords": [
     "jquery",
     "restful"
