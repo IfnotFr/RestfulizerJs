@@ -44,7 +44,7 @@
                     var hasParams = (paramsIndex > -1);
 
                     if (hasParams) {
-                        var params = options.target.substr(paramsIndex + 1).split('&');
+                        var params = options.target.substr(paramsIndex + 1).split('#')[0].split('&');
                         options.target = options.target.substr(0, paramsIndex);
 
                         for (var i = 0; i < params.length; i++) {
