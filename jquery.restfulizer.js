@@ -16,15 +16,14 @@
 (function ($) {
     $.fn.extend({
         restfulizer: function (options) {
-            var defaults = {
+            var defaults = $.extend({
                 parse: false,
                 target: null,
                 method: "POST"
-            };
-            var options = $.extend(defaults, options);
-            var last = null;
+            }, options);
 
             return $(this).each(function () {
+                var options = $.extend({}, defaults);
                 var self = $(this);
 
                 // Try to get data-param into options
@@ -76,4 +75,3 @@
         }
     });
 })(jQuery);
-
